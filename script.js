@@ -21,16 +21,18 @@ document.addEventListener("DOMContentLoaded", () => {
     post_types.addEventListener("change", filterPosts);
     date_asc.addEventListener("change", filterPosts);
     date_desc.addEventListener("change", filterPosts);
+
     searchbar.addEventListener("keypress", function(event){
         if(event.key === "Enter") searchPosts();
-    })
+    });
 
     window.addEventListener("load", () => {
         window.scrollTo(0, 0);
     });
 
-})
+});
 
+/* Funkcija atgriež masīvu ar visām vērtībām no posts.js pēc padotās property īpašības */
 function getValues(property){
     let arr = [];
     for(let post of posts){
@@ -42,6 +44,7 @@ function getValues(property){
     return arr.sort();
 }
 
+/* Funkcija iegūst visus publikāciju veidus un izveido, kā filtru opcijas HTML kodā */
 function addPostTypes(){
     let types = getValues("Type");
     for(let type of types){
@@ -66,6 +69,7 @@ function addPostTypes(){
     }
 }
 
+/* Funkcija saņem publikācijas objektu no posts.js un atgriež div.post publikāciju */
 function createPost(post){
     let new_post = document.createElement("div");
     new_post.className = "post";
@@ -87,10 +91,13 @@ function createPost(post){
     </tr>
     </table>
     <p id="read"><a href="${post["pdf"]}">Lasīt..</a></p>
-    `
+    `;
     return new_post;
 }
 
+/* Funkcija sakārto tekošo publikāciju masīvu running_posts_arr augošā vai dilstošā 
+    secībā pēc publicēšanas datuma
+*/
 function sortPostArray(){
     running_posts_arr.sort(function(a, b){
         let date_a = new Date(a.Published);
@@ -100,6 +107,9 @@ function sortPostArray(){
     });
 }
 
+/* Funkcija izveido div.post elementus katram publikācijas objektam posts.js un pievieno
+    .posts sarakstam HTML kodā
+*/
 function addAllPosts(){
     for(let post of running_posts_arr){
         let new_post = createPost(post);
@@ -107,10 +117,14 @@ function addAllPosts(){
     }
 }
 
+/* Funkcija izņem no posts. saraksta HTML kodā visas publikācijas */
 function removeAllPosts(){
     posts_element.innerHTML = "";
 }
 
+/* Funkcija pievieno tekošajam publikāciju masīvam running_posts_arr tās publikācijas,
+    kurām tips (Grāmatas analīze, Recenzija utt.) sakrīt ar filtros atzīmētajiem
+*/
 function filterPosts(){
     let checked_values = "";
     for(let post_type of post_types){
@@ -135,6 +149,9 @@ function filterPosts(){
     addAllPosts();
 }
 
+/* Funkcija pievieno tekošajam publikāciju masīvam running_posts_arr tās publikācijas,
+    kuru virsrakstā vai aprakstā sakrīt simbolu virkne ar meklētājā ievadīto
+*/
 function searchPosts(){
     let filtered_posts = [];
     let searchbar_value = searchbar.value.toLowerCase();
@@ -157,6 +174,14 @@ function searchPosts(){
         if(post_type_match && search_match) filtered_posts.push(post);
     }
     running_posts_arr = filtered_posts;
+
+    if(running_posts_arr.length == 0){
+        document.getElementById("no-result").style.display = "flex";
+        document.getElementById("result").textContent = searchbar.value;
+    }else{
+        document.getElementById("no-result").style.display = "none";
+    }
+
     sortPostArray();
     removeAllPosts();
     addAllPosts();

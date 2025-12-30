@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="lv">
     <head>
         <title>Kristiāns Magons</title>
         <meta charset="UTF-8">
@@ -21,7 +21,6 @@
                 <div id="about" class="about">
                     <div class="image">
                         <img src="images/portret.jpg" alt="Bilde">
-                        <p>Kristiāns Magons</p>
                     </div>
                     <p>
                         Lapa veltīta manam personīgajam blogam, kur publicēju dažādus
@@ -29,41 +28,41 @@
                         pārdomas...
                     </p>
                 </div>
-
-                    <div id="posts" class="filters">
-                        <div class="dropdown">
-                            <button class="dropdown-btn">Publikācija</button>
-                            <form id="post-type" class="dropdown-list">
-
-                            </form>
+                <div id="posts" class="filters">
+                    <div class="dropdown">
+                        <button class="dropdown-btn">Publikācija</button>
+                        <form id="post-type" class="dropdown-list">
+                        </form>
+                    </div>
+                    <div class="sorting">
+                        <div class="date-asc">
+                            <label for="date-asc">Datums (sākot no jaunākā)</label>
+                            <input id="date-asc" type="radio" name="date" checked="checked">
                         </div>
-                        <div class="sorting">
-                            <div class="date-asc">
-                                <label for="date-asc">Datums (sākot no jaunākā)</label>
-                                <input id="date-asc" type="radio" name="date" checked="checked">
-                            </div>
-                            <div class="date-desc">
-                                <label for="date-desc">Datums (sākot no vecākā)</label>
-                                <input id="date-desc" type="radio" name="date">
-                            </div>
+                        <div class="date-desc">
+                            <label for="date-desc">Datums (sākot no vecākā)</label>
+                            <input id="date-desc" type="radio" name="date">
                         </div>
                     </div>
-                    <div class="searchbar">
-                        <input id="searchbar" type="text" placeholder="Meklēt..">
-                        <button id="searchbar_button" onclick="searchPosts()">Meklēt</button>
-                    </div>
-
+                </div>
+                <div class="searchbar">
+                    <input id="searchbar" type="text" placeholder="Meklēt..">
+                    <button id="searchbar_button" onclick="searchPosts()">Meklēt</button>
+                </div>
+                <div id="no-result" class="no-result" style="display:none">
+                    Netika atrasts rezultāts ("<span id="result"></span>")
+                </div>
                 <div class="posts">
                 </div>
             </main>
-
             <footer class="footer">
-                <ul id="contact">
-                    <lh>Kontakti</lh>
-                    <li>Epasts: kristians.magons@gmail.com</li>
-                    <li>X: <a href="https://x.com/kmgons">@kmgons</a></li>
-                    <li>Tel: 27 463 966</li>
-                </ul>
+                <div id="contact">
+                    <h4 class="contact-header">Kontakti</h4>
+                    <ul class="contacts">
+                        <li>Epasts: <span class="email">kristians.magons@gmail.com</span></li>
+                        <li>X: <a href="https://x.com/kmgons">@kmgons</a></li>
+                    </ul>
+                </div>
             </footer>
         </div>
     </body>
