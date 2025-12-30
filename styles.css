@@ -78,12 +78,14 @@ html{
     margin-bottom: 60px;
     width: 80%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
 .image{
     width: 300px;
     text-align: center;
+    margin-right: 20px;
 }
 
 .image img{
@@ -92,8 +94,8 @@ html{
 }
 
 .about > p{
-    margin-left: 20px;
     width: 550px;
+    max-width: 100%;
     font-size: 22px;
     text-align:justify;
 }
@@ -103,7 +105,8 @@ html{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 30px;
     width: 100%;
     max-width: 680px;
     font-size: 20px;
@@ -112,7 +115,6 @@ html{
 /* Dropdown */
 
 .dropdown{
-    justify-content: space-between;
     position: relative;
     display: inline-block;
 }
@@ -163,14 +165,17 @@ html{
 /* Sorting */
 .sorting{
     display: flex;
-    justify-content: space-between;
-    width: 500px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
 }
 
 .date-asc, .date-desc{
     display: flex;
     height: 30px;
     align-items: center;
+    justify-content: center;
+    min-width: 250px;
 }
 
 .date-asc label, .date-desc label{
