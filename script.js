@@ -45,10 +45,24 @@ function getValues(property){
 function addPostTypes(){
     let types = getValues("Type");
     for(let type of types){
-        let option = document.createElement("option")
-        option.value = type;
-        option.textContent = type;
-        post_types.append(option);
+        let select = document.createElement("div")
+        select.className = "select";
+
+        let label = document.createElement("label");
+        label.className="select-label"
+
+        let input = document.createElement("input");
+        input.type = "checkbox";
+        input.id = type;
+        input.name = type;
+        input.value = type;
+
+        let text = document.createElement("span");
+        text.textContent = type;
+
+        label.append(input, text)
+        select.append(label)
+        post_types.append(select);
     }
 }
 
@@ -98,17 +112,19 @@ function removeAllPosts(){
 }
 
 function filterPosts(){
-    let post_type_values = "";
-    for(let option of post_types.selectedOptions) post_type_values += option.value;
+    let checked_values = "";
+    for(let post_type of post_types){
+        if(post_type.checked) checked_values += post_type.value;
+    }
     
     running_posts_arr = [];
-    if(post_type_values.includes("default-value") || post_type_values === ""){
+    if(checked_values === ""){
         running_posts_arr = posts;
     }else{
         for(let post of posts){
         let post_types = post["Type"].split(",").map(t => t.trim());
         for(let post_type of post_types){
-            if(post_type_values.includes(post_type) && !running_posts_arr.includes(post)) running_posts_arr.push(post);
+            if(checked_values.includes(post_type) && !running_posts_arr.includes(post)) running_posts_arr.push(post);
         }
     }
     }
@@ -122,16 +138,19 @@ function filterPosts(){
 function searchPosts(){
     let filtered_posts = [];
     let searchbar_value = searchbar.value.toLowerCase();
-    let post_type_values = "";
-    for(let option of post_types.selectedOptions) post_type_values += option.value;
+    let checked_values = "";
+    for(let post_type of post_types){
+        if(post_type.checked) checked_values += post_type.value;
+    }
+
     for(let post of posts){
         let title = post["Title"].toLowerCase();
         let description = post["Description"].toLowerCase();
         let post_types = post["Type"].split(",").map(t => t.trim());
         let post_type_match = false;
-        if(post_type_values === "" || post_type_values.includes("default-value")) post_type_match = true;
+        if(checked_values === "") post_type_match = true;
         for(let post_type of post_types){
-            if(post_type_values.includes(post_type)) post_type_match = true;
+            if(checked_values.includes(post_type)) post_type_match = true;
         }
         let search_match = (title.includes(searchbar_value) || description.includes(searchbar_value));
         if(searchbar_value === "") search_match = true;

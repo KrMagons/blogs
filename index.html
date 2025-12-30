@@ -30,21 +30,24 @@
                     </p>
                 </div>
 
-                    <form id="posts" class="filters">
-                        <div class="post-type">
-                            <select id="post-type" name="post-type" multiple>
-                                <option value="default-value">Publikācijas (visas)</option>
-                            </select>
+                    <div id="posts" class="filters">
+                        <div class="dropdown">
+                            <button class="dropdown-btn">Publikācija</button>
+                            <form id="post-type" class="dropdown-list">
+
+                            </form>
                         </div>
-                        <div class="date-asc">
-                            <label for="date-asc">Datums (sākot no jaunākā)</label>
-                            <input id="date-asc" type="radio" name="date" checked="checked">
+                        <div class="sorting">
+                            <div class="date-asc">
+                                <label for="date-asc">Datums (sākot no jaunākā)</label>
+                                <input id="date-asc" type="radio" name="date" checked="checked">
+                            </div>
+                            <div class="date-desc">
+                                <label for="date-desc">Datums (sākot no vecākā)</label>
+                                <input id="date-desc" type="radio" name="date">
+                            </div>
                         </div>
-                        <div class="date-desc">
-                            <label for="date-desc">Datums (sākot no vecākā)</label>
-                            <input id="date-desc" type="radio" name="date">
-                        </div>
-                    </form>
+                    </div>
                     <div class="searchbar">
                         <input id="searchbar" type="text" placeholder="Meklēt..">
                         <button id="searchbar_button" onclick="searchPosts()">Meklēt</button>
