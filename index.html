@@ -1,77 +1,204 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Blogs</title>
+        <title>Kristiāns Magons</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-
-        <nav class="nav"> 
-        
-            <div class="nav_left">
-                <h1>Kristiāns Magons</h1>
-            </div>
-
-            <div class="nav_right">
-                <ul>
-                    <li><a href="#blog-info">Par blogu</a></li>
-                    <li><a href="#paragrahps">Raksti</a></li>
+        <div class="page">
+            <nav class="nav">
+                <h1 class="nav-header"><a href="#">Kristiāns Magons</a></h1>
+                <ul class="nav-list">
+                    <li><a href="#about">Par lapu</a></li>
+                    <li><a href="#posts">Raksti</a></li>
                     <li><a href="#contact">Kontakti</a></li>
                 </ul>
+            </nav>
+            <main>
+                <div id="about" class="about">
+                    <div class="image">
+                        <img src="images/portret.jpg" alt="Bilde">
+                        <p>Kristiāns Magons</p>
+                    </div>
+                    <p>
+                        Lapa veltīta manam personīgajam blogam, kur publicēju dažādus
+                        rakstus un skolas darbus. Aprakstu pārgājienus, grāmatas, filosofiju un citas
+                        pārdomas...
+                    </p>
+                </div>
 
-            </div>
+                    <form id="posts" class="sorting">
+                        <label id="select"for="post-type">Publikācija</label>
+                            <select id="post-type" name="post-type">
+                                <option value="book-analysis">Grāmatas analīzes</option>
+                                <option value="hikes">Pārgājieni</option>
+                                <option value="school-works">Skolas darbi</option>
+                                <option value="scientific-works">Zinātniskie darbi</option>
+                                <option value="reviews">Recenzijas</option>
+                            </select>
+                        <label id="date-asc" for="date-asc">Publikācijas datums (sākot no jaunākā)</label>
+                        <input type="radio" name="date-asc">
+                        <label id="date-desc" for="date-desc">Publikācijas datums (sākot no vecākā)</label>
+                        <input type="radio" name="date-desc">
+                    </form>
 
-        </nav>
+                <div class="posts">
+                    <div class="post">
+                        <img src="images/epictetus.jpg" alt="Epiktēts (bilde)">
+                        <div class="post-description">
+                            <h3>Epiktēts</h3>
+                            <p>Grāmatas "Epiktēts" analīze un personīgās pārdomas</p>
+                        </div>
+                        <table class="post-info">
+                            <tr>
+                                <td>Publicēts </td>
+                                <td>22.03.2024</td>
+                            </tr>
+                            <tr>
+                                <td>Publikācija </td>
+                                <td>Grāmatas analīze</td>
+                            </tr>
+                        </table>
+                        <p id="read"><a href="darbi/Epiktets.pdf">Lasīt..</a></p>
+                    </div>
+                    <div class="post">
+                        <img src="images/meditations.png" alt="Meditācijas (bilde)">
+                        <div class="post-description">
+                            <h3>Marks Aurēlijs. Meditācijas</h3>
+                            <p>Grāmatas "Meditācijas" analīze un personīgās pārdomas</p>
+                        </div>
+                        <table class="post-info">
+                            <tr>
+                                <td>Publicēts </td>
+                                <td>01.10.2023</td>
+                            </tr>
+                            <tr>
+                                <td>Publikācija </td>
+                                <td>Grāmatas analīze</td>
+                            </tr>
+                        </table>
+                        <p id="read"><a href="darbi/Meditacijas.pdf">Lasīt..</a></p>
+                    </div>
+                    <div class="post">
+                        <img src="images/ligavumednieki.jpg" alt="Līgavu mednieki (bilde)">
+                        <div class="post-description">
+                            <h3>Anšlavs Eglīts. Līgavu mednieki</h3>
+                            <p>Grāmatas "Līgavu mednieki" analīze</p>
+                        </div>
+                        <table class="post-info">
+                            <tr>
+                                <td>Publicēts </td>
+                                <td>08.01.2024</td>
+                            </tr>
+                            <tr>
+                                <td>Publikācija </td>
+                                <td>Grāmatas analīze</td>
+                            </tr>
+                        </table>
+                        <p id="read"><a href="darbi/Ligavu mednieki.pdf">Lasīt..</a></p>
+                    </div>
+                    <div class="post">
+                        <img src="images/cryptoclidus.jpg" alt="Kriptokliduss (bilde)">
+                        <div class="post-description">
+                            <h3>Kriptokliduss</h3>
+                            <p>Apraksts par izmirušo pleziosauru rāpuļu ģints dzīvnieku kriptoklidusu</p>
+                        </div>
+                        <table class="post-info">
+                            <tr>
+                                <td>Publicēts </td>
+                                <td>21.09.2024</td>
+                            </tr>
+                            <tr>
+                                <td>Publikācija </td>
+                                <td>Skolas darbs</td>
+                            </tr>
+                        </table>
+                        <p id="read"><a href="darbi/Kriptokliduss.pdf">Lasīt..</a></p>
+                    </div>
+                    <div class="post">
+                        <img src="images/dostoevsky.jpg" alt="Brāļi Karamazovi (bilde)">
+                        <div class="post-description">
+                            <h3>Brāļi Karamazovi</h3>
+                            <p>Fjodora Dostojevska grāmatas "Brāļi Karamazovi" analīze</p>
+                        </div>
+                        <table class="post-info">
+                            <tr>
+                                <td>Publicēts </td>
+                                <td>30.09.2023</td>
+                            </tr>
+                            <tr>
+                                <td>Publikācija </td>
+                                <td>Grāmatas analīze</td>
+                            </tr>
+                        </table>
+                        <p id="read"><a href="darbi/Brali Karamazovi.pdf">Lasīt..</a></p>
+                    </div>
+                    <div class="post">
+                        <img src="images/matespiens.jpg" alt="Mātes piens (bilde)">
+                        <div class="post-description">
+                            <h3>Filmas "Mātes piens" recenzija</h3>
+                            <p>Recenzija par Ināras Kolmanes režisēto filmu "Mātes piens"</p>
+                        </div>
+                        <table class="post-info">
+                            <tr>
+                                <td>Publicēts </td>
+                                <td>01.11.2023</td>
+                            </tr>
+                            <tr>
+                                <td>Publikācija </td>
+                                <td>Recenzija, Skolas darbs</td>
+                            </tr>
+                        </table>
+                        <p id="read"><a href="darbi/Recenzija Mates Piens.pdf">Lasīt..</a></p>
+                    </div>
+                    <div class="post">
+                        <img src="images/pargajiens rigas-saulkrasti.jpeg" alt="Pārgajiens (bilde)">
+                        <div class="post-description">
+                            <h3>Pārgājiens Mangaļsalas mols - Zvejniekciems</h3>
+                            <p>Apraksts par 2022. gada rudens 50km garo pārgājienu no Mangaļsalas mola līdz Zvejniekciemam.</p>
+                        </div>
+                        <table class="post-info">
+                            <tr>
+                                <td>Publicēts </td>
+                                <td>07.10.2022</td>
+                            </tr>
+                            <tr>
+                                <td>Publikācija </td>
+                                <td>Pārgājiens</td>
+                            </tr>
+                        </table>
+                        <p id="read"><a href="darbi/Pargajiens Riga-Zvejniekciems.pdf">Lasīt..</a></p>
+                    </div>
+                    <div class="post">
+                        <img src="images/zpd.png" alt="ZPD (bilde)">
+                        <div class="post-description">
+                            <h3>Mākslīgā intelekta teorētiskais risinājums attiecībā pret iespējamo realizāciju</h3>
+                            <p>12. klases zinātniski pētnieciskais darbs</p>
+                        </div>
+                        <table class="post-info">
+                            <tr>
+                                <td>Publicēts </td>
+                                <td>06.01.2025</td>
+                            </tr>
+                            <tr>
+                                <td>Publikācija </td>
+                                <td>Zinātniskais darbs, Skolas darbs</td>
+                            </tr>
+                        </table>
+                        <p id="read"><a href="darbi/ZPD.pdf">Lasīt..</a></p>
+                    </div>
+                </div>
+            </main>
 
-        <!--
-
-        <nav>
-            <h1>Kristiāns Magons</h1>
-            <div class="nav-items">
-                <ul>
-                    <li><a href="#blog-info">Par blogu</a></li>
-                    <li><a href="#paragrahps">Raksti</a></li>
-                    <li><a href="#contact">Kontakti</a></li>
+            <footer class="footer">
+                <ul id="contact">
+                    <lh>Kontakti</lh>
+                    <li>Epasts: kristians.magons@gmail.com</li>
+                    <li>X: <a href="https://x.com/kmgons">@kmgons</a></li>
+                    <li>Tel: 27 463 966</li>
                 </ul>
-            </div>
-        </nav>
-
-        -->
-
-        <h3 id="blog-info">Par blogu</h3>
-
-        <h3>Raksti</h3>
-        <div id="paragraphs">
-            <div class="tile">
-                <h4>Raksts1</h4>
-            </div>
-
-            <div class="tile">
-                <h4>Raksts2</h4>
-            </div>
-
-            <div class="tile">
-                <h4>Raksts3</h4>
-            </div>
-
-            <div class="tile">
-                <h4>Raksts4</h4> 
-            </div>
-
-            <div class="tile">
-                <h4>Raksts5</h4>
-            </div>
+            </footer>
         </div>
-        <footer id="contact">
-            <p>Mans e-pasts: kristians.magons@gmail.com</p>
-            <form>
-                <legend>Nosūti ziņu:</legend>
-                <label for="name">Vards:</label>
-                <input type="text" id="name" name="name">
-                <textarea name="message" rows="10" cols="30"></textarea>
-                <input type="submit">
-            </form>
-        </footer>
     </body>
 </html>
