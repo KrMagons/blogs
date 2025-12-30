@@ -103,7 +103,6 @@ html{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 8px;
     justify-content: space-between;
     width: 100%;
     max-width: 680px;
@@ -137,6 +136,7 @@ html{
     border: none;
     border-radius: 2px;
     background-color: #97aabd;
+    text-align: center;
 }
 
 .dropdown-list .select{
@@ -283,7 +283,7 @@ html{
 }
 
 .post-info{
-    margin: 0;
+    margin: 0 0 10px 0;
     padding: 0;
     margin-top: auto;
     font-size: 18px;
@@ -308,6 +308,7 @@ html{
     font-size: 20px;
     text-decoration: none;
     color: blueviolet;
+    transition: 0.3s
 }
 
 /* Footer */
@@ -352,9 +353,26 @@ html{
 }
 
 #read a:hover{
-    color: blue;
+    color: rgb(0, 27, 200);
 }
 
 .searchbar button:hover{
     background-color: slategray;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: gray; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: slategray; 
 }
