@@ -67,16 +67,16 @@
                     <h4 class="message-header">Atsūtīt ziņu</h4>
                     <form id="message-form" method="post" onsubmit="return isMessageValid(event)" action="https://www.w3schools.com/action_page.php" class="message-form">
                         <div class="name">
-                            <label for="name">Vārds: </label>
+                            <label for="name">Vārds: </label><br>
                             <input id="name" type="text" id="name" name="name" autocomplete="off">
-                            <span id="name-error" class="name-error">Kļūda</span>
+                            <span id="name-error" class="name-error">*</span>
                         </div>
                         <div class="email">
-                            <label for="email">Epasts: </label>
+                            <label for="email">Epasts: </label><br>
                             <input id="email" type="email" id="email" name="email" autocomplete="off">
-                            <span id="email-error" class="email-error">Kļūda</span><br><br>
+                            <span id="email-error" class="email-error">*</span>
                         </div>
-                        <div class="message">
+                        <div class="message-text">
                             <label for="message">Ziņa: </label><br>
                             <textarea id="message" name="message" rows="4" cols="50"></textarea>
                             <br>

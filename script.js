@@ -200,7 +200,7 @@ function searchPosts(){
 }
 
 /* Funkcija pārbauda, vai iesniegtā ziņas forma ir derīga. Ja ir, iesniedz formu. Pretējā gadījumā
-    uzrāda kļūdu
+    uzrāda kļūdu un formu neiesniedz
 */
 function isMessageValid(event){
     let name_val = name_input.value;
@@ -211,7 +211,7 @@ function isMessageValid(event){
     let valid_message = false;
     let valid_email = false;
 
-    if(!name_val || name_val.length == 0 || name_val.length > 20){
+    if(!name_val || name_val.length == 0 || name_val.length > 30){
         document.getElementById("name-error").style.display = "inline-block";
     }else{
         document.getElementById("name-error").style.display = "none";
