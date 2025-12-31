@@ -241,6 +241,9 @@ html{
     text-overflow: ellipsis;
 }
 
+#no-result{
+    display: none;
+}
 
 /* Posts */
 .posts{
@@ -321,6 +324,7 @@ html{
     padding: 16px;
     display: flex;
     background-color: slategrey;
+    justify-content: space-between;
 }
 
 .contact-header{
@@ -346,6 +350,22 @@ html{
 .email{
     font-style: italic;
 }
+
+/* Message */
+
+.message{
+    margin-right: 16px;
+}
+
+#name-error, #email-error {
+    color: red;
+    display: none;
+}
+
+#message{
+    border-color: black;
+}
+
 
 /* Hover effects */
 .nav-list a:hover{

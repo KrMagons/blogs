@@ -6,6 +6,10 @@ let date_desc;
 let searchbar;
 let searchbar_button;
 let posts_element;
+let name_input;
+let email_input;
+let message_input;
+let message_form;
 
 document.addEventListener("DOMContentLoaded", () => {
     post_types = document.getElementById("post-type");
@@ -14,6 +18,10 @@ document.addEventListener("DOMContentLoaded", () => {
     searchbar = document.getElementById("searchbar");
     searchbar_button = document.getElementById("searchbar-button");
     posts_element = document.getElementsByClassName("posts")[0];
+    name_input = document.getElementById("name");
+    email_input = document.getElementById("email");
+    message_input = document.getElementById("message");
+    message_form = document.getElementById("message-form");
 
     addPostTypes();
     sortPostArray();
@@ -21,6 +29,10 @@ document.addEventListener("DOMContentLoaded", () => {
     post_types.addEventListener("change", filterPosts);
     date_asc.addEventListener("change", filterPosts);
     date_desc.addEventListener("change", filterPosts);
+
+    message_form.addEventListener("submit", function(event){
+        if(!isMessageValid) event.preventDefault();
+    });
 
     searchbar.addEventListener("keypress", function(event){
         if(event.key === "Enter") searchPosts();
@@ -185,4 +197,41 @@ function searchPosts(){
     sortPostArray();
     removeAllPosts();
     addAllPosts();
+}
+
+/* Funkcija pārbauda, vai iesniegtā ziņas forma ir derīga. Ja ir, iesniedz formu. Pretējā gadījumā
+    uzrāda kļūdu
+*/
+function isMessageValid(event){
+    let name_val = name_input.value;
+    let email_val = email_input.value;
+    let message_val = message_input.value;
+
+    let valid_name = false;
+    let valid_message = false;
+    let valid_email = false;
+
+    if(!name_val || name_val.length == 0 || name_val.length > 20){
+        document.getElementById("name-error").style.display = "inline-block";
+    }else{
+        document.getElementById("name-error").style.display = "none";
+        valid_name = true;
+    }
+
+    if(!email_val || !email_input.checkValidity()){
+        document.getElementById("email-error").style.display = "inline-block";
+    } 
+    else {
+        document.getElementById("email-error").style.display = "none";
+        valid_email = true;
+    } 
+
+    if(!message_val || message_val.trim() === ""){
+        document.getElementById("message").style.borderColor = "red";
+    }else{
+        document.getElementById("message").style.borderColor = "black";
+        valid_message = true;
+    }
+
+    if(!(valid_name && valid_email && valid_message)) event.preventDefault();
 }

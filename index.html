@@ -49,7 +49,7 @@
                     <input id="searchbar" type="text" placeholder="Meklēt..">
                     <button id="searchbar_button" onclick="searchPosts()">Meklēt</button>
                 </div>
-                <div id="no-result" class="no-result" style="display:none">
+                <div id="no-result" class="no-result">
                     Netika atrasts rezultāts ("<span id="result"></span>")
                 </div>
                 <div class="posts">
@@ -62,6 +62,27 @@
                         <li>Epasts: <span class="email">kristians.magons@gmail.com</span></li>
                         <li>X: <a href="https://x.com/kmgons">@kmgons</a></li>
                     </ul>
+                </div>
+                <div class="message">
+                    <h4 class="message-header">Atsūtīt ziņu</h4>
+                    <form id="message-form" method="post" onsubmit="return isMessageValid(event)" action="https://www.w3schools.com/action_page.php" class="message-form">
+                        <div class="name">
+                            <label for="name">Vārds: </label>
+                            <input id="name" type="text" id="name" name="name" autocomplete="off">
+                            <span id="name-error" class="name-error">Kļūda</span>
+                        </div>
+                        <div class="email">
+                            <label for="email">Epasts: </label>
+                            <input id="email" type="email" id="email" name="email" autocomplete="off">
+                            <span id="email-error" class="email-error">Kļūda</span><br><br>
+                        </div>
+                        <div class="message">
+                            <label for="message">Ziņa: </label><br>
+                            <textarea id="message" name="message" rows="4" cols="50"></textarea>
+                            <br>
+                            <input id="submit" type="submit" value="Sūtīt">
+                        </div>
+                    </form>
                 </div>
             </footer>
         </div>
