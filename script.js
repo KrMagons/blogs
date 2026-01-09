@@ -1,5 +1,6 @@
 let running_posts_arr = posts;
 
+let dropdown_button;
 let post_types;
 let date_asc;
 let date_desc;
@@ -12,6 +13,7 @@ let message_input;
 let message_form;
 
 document.addEventListener("DOMContentLoaded", () => {
+    dropdown_button = document.getElementById("dropdown-btn");
     post_types = document.getElementById("post-type");
     date_asc = document.getElementById("date-asc");
     date_desc = document.getElementById("date-desc");
@@ -234,4 +236,15 @@ function isMessageValid(event){
     }
 
     if(!(valid_name && valid_email && valid_message)) event.preventDefault();
+}
+
+function displayDropdown(){
+    if(post_types.style.display == "none"){
+        post_types.style.display = "block";
+        dropdown_button.style.backgroundColor = "slategray";
+    }
+    else{
+        post_types.style.display = "none";
+        dropdown_button.style.backgroundColor = "#97aabd";
+    }
 }

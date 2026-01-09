@@ -41,7 +41,7 @@ html{
     align-items: center;
     background-color: slategrey;
     overflow: hidden;
-    z-index: 1;
+    z-index: 2;
     box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.5);
 }
 
@@ -125,10 +125,7 @@ html{
     width: 180px;
     background-color: lightgray;
     border-radius: 2px;
-}
-
-.dropdown:hover .dropdown-list{
-    display: block;
+    z-index: 1;
 }
 
 .dropdown-btn{
@@ -139,6 +136,7 @@ html{
     border-radius: 2px;
     background-color: #97aabd;
     text-align: center;
+    cursor: pointer;
 }
 
 .dropdown-list .select{
@@ -458,4 +456,12 @@ html{
 
 ::-webkit-scrollbar-thumb:hover {
   background: slategray; 
+}
+
+/* RWD */
+
+@media (max-width: 600px) {
+    .nav li{
+        display: none;
+    }
 }
