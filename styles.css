@@ -20,6 +20,10 @@ html, body{
     height: 100%;
 }
 
+body{
+    overflow-x: hidden;
+}
+
 html{
     scroll-padding-top: 80px;
     scroll-behavior: smooth;
@@ -254,7 +258,7 @@ html{
 
 .post{
     border-radius: 8px ;
-    margin: 20px 0;
+    margin: 20px;
     padding: 30px;
     width: 400px;
     height: 550px;
@@ -386,7 +390,8 @@ html{
 }
 
 #message{
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     padding: 2px;
     border-color: black;
     resize: none;
@@ -414,6 +419,8 @@ html{
 }
 
 #name, #email{
+    width: 100%;
+    max-width: 200px;
     border: none;
 }
 
@@ -463,4 +470,9 @@ html{
     .nav li{
         display: none;
     }
+
+    .nav{
+        justify-content: center;
+    }
+
 }

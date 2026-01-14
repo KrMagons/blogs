@@ -1,5 +1,4 @@
 let running_posts_arr = posts;
-
 let dropdown_button;
 let post_types;
 let date_asc;
@@ -238,6 +237,7 @@ function isMessageValid(event){
     if(!(valid_name && valid_email && valid_message)) event.preventDefault();
 }
 
+/* Funkcija attēlo vai paslēpj publikāciju veidu izvēlni .dropdown-list */
 function displayDropdown(){
     if(post_types.style.display == "none"){
         post_types.style.display = "block";
