@@ -89,7 +89,6 @@ html{
 .image{
     width: 300px;
     text-align: center;
-    margin-right: 20px;
 }
 
 .image img{
@@ -98,6 +97,7 @@ html{
 }
 
 .about > p{
+    padding-left: 20px;
     width: 550px;
     max-width: 100%;
     font-size: 22px;
@@ -474,5 +474,13 @@ html{
     .nav{
         justify-content: center;
     }
+
+    .about > p{
+    padding-left: 0;
+    width: 300px;
+    max-width: 100%;
+    font-size: 22px;
+    text-align:justify;
+}
 
 }
