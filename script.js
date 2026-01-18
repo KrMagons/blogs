@@ -86,25 +86,59 @@ function addPostTypes(){
 function createPost(post){
     let new_post = document.createElement("div");
     new_post.className = "post";
-    new_post.innerHTML = 
-    `
-    <img src="${post["img"]}" alt="Bilde (${post["Title"]})">
-    <div class="post-description">
-        <h3>${post["Title"]}</h3>
-        <p>${post["Description"]}</p>
-    </div>
-    <table class="post-info">
-    <tr>
-        <td>Publicēts </td>
-        <td>${post["Published"]}</td>
-    </tr>
-    <tr>
-        <td>Publikācija </td>
-        <td>${post["Type"]}</td>
-    </tr>
-    </table>
-    <p id="read"><a href="${post["pdf"]}">Lasīt..</a></p>
-    `;
+
+    //Bildes elements
+    let post_img = document.createElement("img");
+    post_img.src = post["img"];
+    post_img.alt = "Bilde " + post["Title"];
+    new_post.append(post_img);
+
+    //Publikācijas apraksts
+    let post_description = document.createElement("div");
+    post_description.className = "post-description";
+    let description_h3 = document.createElement("h3");
+    description_h3.textContent = post["Title"];
+    post_description.append(description_h3);
+    let description_p = document.createElement("p")
+    description_p.textContent = post["Description"];
+    post_description.append(description_p);
+    new_post.append(post_description);
+
+    //Publikācijas info (tips, datums)
+    let post_info = document.createElement("table");
+    post_info.className = "post-info";
+
+    //Datums
+    let first_row = document.createElement("tr");
+    let date_first_td = document.createElement("td");
+    date_first_td.textContent = "Publicēts ";
+    first_row.append(date_first_td);
+    let date_second_td = document.createElement("td");
+    date_second_td.textContent = post["Published"];
+    first_row.append(date_second_td);
+    post_info.append(first_row);
+
+    //Tips
+    let second_row = document.createElement("tr");
+    let post_first_td = document.createElement("td");
+    post_first_td.textContent = "Publikācija ";
+    second_row.append(post_first_td);
+    let post_second_td = document.createElement("td");
+    post_second_td.textContent = post["Type"];
+    second_row.append(post_second_td);
+    post_info.append(second_row);
+
+    new_post.append(post_info);
+
+    //Saite uz publikāciju
+    let read_button = document.createElement("p");
+    read_button.id = "read";
+    let read_link = document.createElement("a");
+    read_link.href = post["pdf"];
+    read_link.textContent = "Lasīt..";
+    read_button.append(read_link);
+    new_post.append(read_button); 
+
     return new_post;
 }
 
