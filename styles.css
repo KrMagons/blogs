@@ -252,16 +252,16 @@ html{
     margin: 20px 0 40px 0;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     width: 80%;
 }
 
 .post{
-    border-radius: 8px ;
+    border-radius: 6px;
     margin: 20px;
-    padding: 30px;
+    padding: 28px;
     width: 400px;
-    height: 550px;
+    height: 600px;
     display: flex;
     flex-direction: column;
     background-color: lightgray;
@@ -276,10 +276,9 @@ html{
 }
 
 .post-description{
-    margin-top: 16px;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
+    margin-top: 8px;
+    display: block;
+    text-align: start;
 }
 
 .post-description h3{
@@ -293,14 +292,12 @@ html{
 }
 
 .post-info{
-    margin: 0 0 10px 0;
-    padding: 0;
     margin-top: auto;
     font-size: 18px;
 }
 
 .post-info td:first-child{
-    width: 90px;
+    width: 100px;
     font-style: italic;
 }
 
@@ -309,9 +306,9 @@ html{
 }
 
 #read{
-    margin-top: auto;
-    display: flex;
-    justify-content: right;
+    margin-top: 8px;
+    display: inline-flex;
+    justify-content: end;
 }
 
 #read a{
@@ -465,7 +462,6 @@ html{
 }
 
 /* RWD */
-
 @media (max-width: 600px) {
     .nav li{
         display: none;
@@ -481,6 +477,18 @@ html{
     max-width: 100%;
     font-size: 22px;
     text-align:justify;
-}
+    }
 
+    .post-description h3{
+        font-size: 22px;
+    }
+
+    .post-description p{
+        font-size: 20px;
+    }
+
+    .post:hover{
+    transform: none;
+    box-shadow: none;
+}
 }
