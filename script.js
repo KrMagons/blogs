@@ -5,7 +5,7 @@ let date_asc;
 let date_desc;
 let searchbar;
 let searchbar_button;
-let posts_element;
+let $posts_element;
 let name_input;
 let email_input;
 let message_input;
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     date_desc = document.getElementById("date-desc");
     searchbar = document.getElementById("searchbar");
     searchbar_button = document.getElementById("searchbar-button");
-    posts_element = document.getElementsByClassName("posts")[0];
+    $posts_element = $(".posts");
     name_input = document.getElementById("name");
     email_input = document.getElementById("email");
     message_input = document.getElementById("message");
@@ -160,13 +160,15 @@ function sortPostArray(){
 function addAllPosts(){
     for(let post of running_posts_arr){
         let new_post = createPost(post);
-        posts_element.append(new_post);
+        $(new_post).css("display", "none");
+        $(new_post).appendTo($posts_element);
+        $(new_post).fadeIn(300);
     }
 }
 
 /* Funkcija izņem no posts. saraksta HTML kodā visas publikācijas */
 function removeAllPosts(){
-    posts_element.innerHTML = "";
+    $posts_element.empty();
 }
 
 /* Funkcija pievieno tekošajam publikāciju masīvam running_posts_arr tās publikācijas,
