@@ -139,23 +139,24 @@ function removeAllPosts(){
     kurām tips (Grāmatas analīze, Recenzija utt.) sakrīt ar filtros atzīmētajiem
 */
 function filterPosts(){
-    let checked_values = "";
-    for(let post_type of post_types){
-        if(post_type.checked) checked_values += post_type.value;
-    }
+    let checked_values = [];
+    let checkboxes = post_types.querySelectorAll('input[type="checkbox"]');
+
+    for(let checkbox of checkboxes)
+        if(checkbox.checked) checked_values.push(checkbox.value);
     
     running_posts_arr = [];
-    if(checked_values === ""){
+    if(checked_values.length == 0){
         running_posts_arr = posts;
     }else{
         for(let post of posts){
-        let post_types = post["Type"].split(",").map(t => t.trim());
-        for(let post_type of post_types){
-            if(checked_values.includes(post_type) && !running_posts_arr.includes(post)) running_posts_arr.push(post);
+            let types = post["Type"].split(",").map(t => t.trim());
+            for(let type of types){
+                if(checked_values.includes(type) && !running_posts_arr.includes(post))
+                    running_posts_arr.push(post);
+            }
         }
     }
-    }
-
     searchPosts();
     sortPostArray();
     removeAllPosts();
@@ -168,20 +169,19 @@ function filterPosts(){
 function searchPosts(){
     let filtered_posts = [];
     let searchbar_value = searchbar.value.toLowerCase();
-    let checked_values = "";
-    for(let post_type of post_types){
-        if(post_type.checked) checked_values += post_type.value;
-    }
+    let checked_values = [];
+    let checkboxes = post_types.querySelectorAll('input[type="checkbox"]');
+    for(let checkbox of checkboxes)
+        if(checkbox.checked) checked_values.push(checkbox.value);
 
     for(let post of posts){
         let title = post["Title"].toLowerCase();
         let description = post["Description"].toLowerCase();
-        let post_types = post["Type"].split(",").map(t => t.trim());
+        let types = post["Type"].split(",").map(t => t.trim());
         let post_type_match = false;
-        if(checked_values === "") post_type_match = true;
-        for(let post_type of post_types){
-            if(checked_values.includes(post_type)) post_type_match = true;
-        }
+        if(checked_values.length == 0) post_type_match = true;
+        for(let type of types)
+            if(checked_values.includes(type)) post_type_match = true;
         let search_match = (title.includes(searchbar_value) || description.includes(searchbar_value));
         if(searchbar_value === "") search_match = true;
         if(post_type_match && search_match) filtered_posts.push(post);
