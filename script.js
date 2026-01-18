@@ -1,6 +1,8 @@
 let running_posts_arr = posts;
 let dropdown_button;
 let post_types;
+let $dropdown_button;
+let $post_types;
 let date_asc;
 let date_desc;
 let searchbar;
@@ -14,6 +16,8 @@ let message_form;
 document.addEventListener("DOMContentLoaded", () => {
     dropdown_button = document.getElementById("dropdown-btn");
     post_types = document.getElementById("post-type");
+    $dropdown_button = $("dropdown-btn");
+    $post_types = $("dropdown-list");
     date_asc = document.getElementById("date-asc");
     date_desc = document.getElementById("date-desc");
     searchbar = document.getElementById("searchbar");
@@ -275,12 +279,11 @@ function isMessageValid(event){
 
 /* Funkcija attēlo vai paslēpj publikāciju veidu izvēlni .dropdown-list */
 function displayDropdown(){
-    if(post_types.style.display == "none"){
-        post_types.style.display = "block";
-        dropdown_button.style.backgroundColor = "slategray";
-    }
-    else{
-        post_types.style.display = "none";
-        dropdown_button.style.backgroundColor = "#97aabd";
+    if($(post_types).css("display") === "none"){
+        $(post_types).fadeIn(300);
+        $(dropdown_button).css("background-color", "slategray");
+    }else{
+        $(post_types).fadeOut(300);
+        $(dropdown_button).css("background-color", "#97aabd");
     }
 }
