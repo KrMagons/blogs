@@ -138,6 +138,7 @@ html{
     font-size: 18px;
     border: none;
     border-radius: 2px;
+    color: black;
     background-color: #97aabd;
     text-align: center;
     cursor: pointer;
@@ -294,6 +295,10 @@ html{
 .post-info{
     margin-top: auto;
     font-size: 18px;
+}
+
+.post-info td{
+    vertical-align: top;
 }
 
 .post-info td:first-child{
