@@ -337,7 +337,6 @@ html{
     margin: 0;
     font-family: "Gelasio", serif;
     font-size: 20px;
-    font-weight: 900;
 }
 
 .contacts li a{
@@ -401,10 +400,6 @@ html{
 
 #message:focus{
     outline: none;
-}
-
-.name label, .email label, .message-text label{
-    font-style: italic;
 }
 
 #name:focus{

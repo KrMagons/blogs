@@ -58,27 +58,27 @@
             </main>
             <footer class="footer">
                 <div id="contact">
-                    <h4 class="contact-header">Kontakti</h4>
-                    <ul class="contacts">
+                    <h4 class="contact-header"><bold>Kontakti</bold></h4>
+                    <ol class="contacts">
                         <li>Epasts: <span class="email">kristians.magons@gmail.com</span></li>
                         <li>X: <a href="https://x.com/kmgons">@kmgons</a></li>
-                    </ul>
+                    </ol>
                 </div>
                 <div class="message">
-                    <h4 class="message-header">Nosūtīt ziņu</h4>
+                    <h4 class="message-header"><bold>Nosūtīt ziņu</bold></h4>
                     <form id="message-form" method="post" onsubmit="return isMessageValid(event)" action="https://www.w3schools.com/action_page.php" class="message-form">
                         <div class="name">
-                            <label for="name">Vārds: </label><br>
+                            <label for="name"><i>Vārds:</i></label><br>
                             <input id="name" type="text" id="name" name="name" autocomplete="off">
                             <span id="name-error" class="name-error">*</span>
                         </div>
                         <div class="email">
-                            <label for="email">Epasts: </label><br>
+                            <label for="email"><i>Epasts:</i></label><br>
                             <input id="email" type="email" id="email" name="email" autocomplete="off">
                             <span id="email-error" class="email-error">*</span>
                         </div>
                         <div class="message-text">
-                            <label for="message">Ziņa: </label><br>
+                            <label for="message"><i>Ziņa:</i></label><br>
                             <textarea id="message" name="message" rows="4" cols="50"></textarea>
                             <br>
                             <input id="submit" type="submit" value="Nosūtīt">
