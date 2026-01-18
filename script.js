@@ -212,7 +212,7 @@ function isMessageValid(event){
     let valid_message = false;
     let valid_email = false;
 
-    if(!name_val || name_val.length == 0 || name_val.length > 30){
+    if(!name_val || name_val.trim() === "" || name_val.length > 30){
         document.getElementById("name-error").style.display = "inline-block";
     }else{
         document.getElementById("name-error").style.display = "none";
