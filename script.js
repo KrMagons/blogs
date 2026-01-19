@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-/* Funkcija atgriež masīvu ar visām vērtībām no posts.js pēc padotās property īpašības */
+//Funkcija atgriež masīvu ar visām vērtībām no posts.js pēc padotās property īpašības
 function getValues(property){
     let arr = [];
     for(let post of posts){
@@ -61,7 +61,7 @@ function getValues(property){
     return arr.sort();
 }
 
-/* Funkcija iegūst visus publikāciju veidus un izveido, kā filtru opcijas HTML kodā */
+//Funkcija iegūst visus publikāciju veidus un izveido, kā filtru opcijas HTML kodā
 function addPostTypes(){
     let types = getValues("Type");
     for(let type of types){
@@ -86,7 +86,7 @@ function addPostTypes(){
     }
 }
 
-/* Funkcija saņem publikācijas objektu no posts.js un atgriež div.post publikāciju */
+//Funkcija saņem publikācijas objektu no posts.js un atgriež div.post publikāciju
 function createPost(post){
     let new_post = document.createElement("div");
     new_post.className = "post";
@@ -136,7 +136,7 @@ function createPost(post){
 
     //Saite uz publikāciju
     let read_button = document.createElement("p");
-    read_button.id = "read";
+    read_button.className = "read";
     let read_link = document.createElement("a");
     read_link.href = post["pdf"];
     read_link.textContent = "Lasīt..";
@@ -159,7 +159,7 @@ function sortPostArray(){
 }
 
 /* Funkcija izveido div.post elementus katram publikācijas objektam posts.js un pievieno
-    .posts sarakstam HTML kodā
+    .posts sarakstam HTML kodā. *Tiek izmantots jQuery metodes priekš "fade in" pārejas
 */
 function addAllPosts(){
     for(let post of running_posts_arr){
@@ -170,7 +170,7 @@ function addAllPosts(){
     }
 }
 
-/* Funkcija izņem no posts. saraksta HTML kodā visas publikācijas */
+//Funkcija izņem no posts. saraksta HTML kodā visas publikācijas
 function removeAllPosts(){
     $posts_element.empty();
 }
@@ -240,7 +240,7 @@ function searchPosts(){
     addAllPosts();
 }
 
-/* Funckijas atgriež patiess, ja vārds sastāv tikai no burtiem. Pretējā gadījumā atgriež aplams. */
+//Funckijas atgriež patiess, ja vārds sastāv tikai no burtiem. Pretējā gadījumā atgriež aplams.
 function isLetters(word){
     let lv_letters = ['ā', 'Ā', 'č', 'Č', 'ē', 'Ē', 'ģ', 'Ģ', 'ī', 'Ī', 'ķ', 'Ķ', 'ļ', 'Ļ', 'ņ', 'Ņ', 'š', 'Š', 'ū', 'Ū', 'ž', 'Ž'];
     for(let l of word){
@@ -287,7 +287,7 @@ function isMessageValid(event){
     if(!(valid_name && valid_email && valid_message)) event.preventDefault();
 }
 
-/* Funkcija attēlo vai paslēpj publikāciju veidu izvēlni .dropdown-list */
+// Funkcija attēlo vai paslēpj publikāciju veidu izvēlni .dropdown-list. Tiek izmantots jQuery priekš pārejas efektiem
 function displayDropdown(){
     if($(post_types).css("display") === "none"){
         $(post_types).fadeIn(300);

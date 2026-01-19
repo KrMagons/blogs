@@ -310,13 +310,13 @@ html{
     font-weight: 600;
 }
 
-#read{
+.read{
     margin-top: 8px;
     display: inline-flex;
     justify-content: end;
 }
 
-#read a{
+.read a{
     font-size: 20px;
     text-decoration: none;
     color: blueviolet;
@@ -433,7 +433,7 @@ html{
     box-shadow: 8px 8px 8px 0 rgba(0, 0, 0, 0.4);
 }
 
-#read a:hover{
+.read a:hover{
     color: rgb(0, 27, 200);
 }
 
@@ -496,7 +496,7 @@ html{
     font-size: 20px;
     }
 
-    #read a{
+    .read a{
         font-size: 22px;
     }
 
@@ -519,7 +519,7 @@ html{
         color: black;
     }
 
-    .nav, .filters, .searchbar, #read a, .message{
+    .nav, .filters, .searchbar, .read a, .message{
         display: none;
     }
 
