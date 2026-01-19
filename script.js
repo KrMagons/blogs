@@ -240,6 +240,16 @@ function searchPosts(){
     addAllPosts();
 }
 
+/* Funckijas atgriež patiess, ja vārds sastāv tikai no burtiem. Pretējā gadījumā atgriež aplams. */
+function isLetters(word){
+    let lv_letters = ['ā', 'Ā', 'č', 'Č', 'ē', 'Ē', 'ģ', 'Ģ', 'ī', 'Ī', 'ķ', 'Ķ', 'ļ', 'Ļ', 'ņ', 'Ņ', 'š', 'Š', 'ū', 'Ū', 'ž', 'Ž'];
+    for(let l of word){
+        if(l>='A' && l<='Z' || l>='a' && l<='z' || lv_letters.includes(l)) continue;
+        else return false;
+    }
+    return true;
+}
+
 /* Funkcija pārbauda, vai iesniegtā ziņas forma ir derīga. Ja ir, iesniedz formu. Pretējā gadījumā
     uzrāda kļūdu un formu neiesniedz
 */
@@ -252,7 +262,7 @@ function isMessageValid(event){
     let valid_message = false;
     let valid_email = false;
 
-    if(!name_val || name_val.trim() === "" || name_val.length > 30){
+    if(!name_val || name_val.trim() === "" || name_val.length > 30 || !isLetters(name_val)){
         document.getElementById("name-error").style.display = "inline-block";
     }else{
         document.getElementById("name-error").style.display = "none";

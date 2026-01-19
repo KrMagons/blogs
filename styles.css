@@ -395,7 +395,7 @@ html{
     width: 100%;
     max-width: 400px;
     padding: 2px;
-    border-color: black;
+    border: none;
     resize: none;
 }
 
@@ -412,6 +412,7 @@ html{
 }
 
 #name, #email, #message {
+    padding: 2px;
     background-color: #ededed;
     font-size: 16px;
 }
