@@ -479,20 +479,33 @@ html{
     text-align:justify;
     }
 
+    .posts{
+        width: 90%;
+    }
+
     .post-description h3{
-        font-size: 22px;
+        font-size: 26px;
     }
 
     .post-description p{
-        font-size: 20px;
+        font-size: 24px;
+    }
+
+    .post-info{
+    font-size: 20px;
+    }
+
+    #read a{
+        font-size: 22px;
     }
 
     .post:hover{
     transform: none;
     box-shadow: none;
-}
+    }
 }
 
+/* Print version */
 @media print{
     body{
         margin: 0;
