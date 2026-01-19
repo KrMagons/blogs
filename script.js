@@ -61,7 +61,7 @@ function getValues(property){
     return arr.sort();
 }
 
-//Funkcija iegūst visus publikāciju veidus un izveido, kā filtru opcijas HTML kodā
+//Funkcija iegūst visus publikāciju veidus un izveido tos, kā filtru opcijas HTML kodā
 function addPostTypes(){
     let types = getValues("Type");
     for(let type of types){
