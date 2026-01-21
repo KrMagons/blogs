@@ -224,30 +224,31 @@ main{
 }
 
 .post{
-    border-radius: 6px;
     margin: 20px;
     width: 400px;
-    height: 600px;
+    height: 560px;
     display: flex;
     flex-direction: column;
     background-color: lightgray;
-    transition: 0.1s;
+    transition: 0.06s;
 }
 
 .post img{
+    border-radius: 4px 4px 0 0;
     max-width: 100%;
     object-fit: contain;
     display: block;
 }
 
 .post-description{
-    margin-top: 8px;
     display: block;
     text-align: start;
 }
 
-.post-description h3{
+.post-description h3 a{
+    text-decoration: none;
     font-family: "Oswald", "serif";
+    color: black;
     font-weight: 600;
     font-size: 28px;
 }
@@ -375,12 +376,12 @@ main{
     }
 
     .post:hover{
-        transform: translate(-4px, -4px);
-        box-shadow: 8px 8px 8px 0 rgba(0, 0, 0, 0.4);
+        transform: translate(-6px, -6px);
+        box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.2);
     }
 
-    .read a:hover{
-        color: rgb(0, 27, 200);
+    .post h3 a:hover{
+        text-decoration: underline;
     }
 
     .searchbar button:hover{
@@ -389,6 +390,10 @@ main{
 
     #submit:hover{
         background-color: #d9d9d9;
+    }
+
+    .post img:hover{
+        opacity: 80%;
     }
 }
 
@@ -412,10 +417,6 @@ main{
     max-width: 100%;
     font-size: 22px;
     text-align:justify;
-    }
-
-    .posts{
-        width: 90%;
     }
 
     .post-description h3{
