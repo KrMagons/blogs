@@ -31,9 +31,9 @@ document.addEventListener("DOMContentLoaded", () => {
     addPostTypes();
     sortPostArray();
     addAllPosts();
-    post_types.addEventListener("change", filterPosts);
-    date_asc.addEventListener("change", filterPosts);
-    date_desc.addEventListener("change", filterPosts);
+    post_types.addEventListener("change", searchPosts);
+    date_asc.addEventListener("change", searchPosts);
+    date_desc.addEventListener("change", searchPosts);
 
     message_form.addEventListener("submit", function(event){
         if(!isMessageValid) event.preventDefault();
@@ -173,34 +173,6 @@ function addAllPosts(){
 //Funkcija izņem no posts. saraksta HTML kodā visas publikācijas
 function removeAllPosts(){
     $posts_element.empty();
-}
-
-/* Funkcija pievieno tekošajam publikāciju masīvam running_posts_arr tās publikācijas,
-    kurām tips (Grāmatas analīze, Recenzija utt.) sakrīt ar filtros atzīmētajiem
-*/
-function filterPosts(){
-    let checked_values = [];
-    let checkboxes = post_types.querySelectorAll('input[type="checkbox"]');
-
-    for(let checkbox of checkboxes)
-        if(checkbox.checked) checked_values.push(checkbox.value);
-    
-    running_posts_arr = [];
-    if(checked_values.length == 0){
-        running_posts_arr = posts;
-    }else{
-        for(let post of posts){
-            let types = post["Type"].split(",").map(t => t.trim());
-            for(let type of types){
-                if(checked_values.includes(type) && !running_posts_arr.includes(post))
-                    running_posts_arr.push(post);
-            }
-        }
-    }
-    searchPosts();
-    sortPostArray();
-    removeAllPosts();
-    addAllPosts();
 }
 
 /* Funkcija pievieno tekošajam publikāciju masīvam running_posts_arr tās publikācijas,
