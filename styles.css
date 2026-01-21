@@ -405,23 +405,6 @@ main{
     background-color: #d9d9d9;
 }
 
-/* Scrollbar */
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-}
-
-::-webkit-scrollbar-thumb {
-    background: gray; 
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: slategray; 
-}
-
 /* RWD */
 @media (max-width: 600px) {
     .nav-header{
