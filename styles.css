@@ -120,10 +120,6 @@ main{
     cursor: pointer;
 }
 
-.dropdown-list .select:hover{
-    background-color: #adc3d9;
-}
-
 .dropdown-list .select-label{
     padding: 6px;
     display: flex;
@@ -384,25 +380,31 @@ main{
 }
 
 /* Hover effects */
-.nav-list a:hover{
-    color:white;
-}
+@media (hover: hover) and (pointer: fine){
+    .nav-list a:hover{
+        color:white;
+    }
 
-.post:hover{
-    transform: translate(-4px, -4px);
-    box-shadow: 8px 8px 8px 0 rgba(0, 0, 0, 0.4);
-}
+    .dropdown-list .select:hover{
+        background-color: #adc3d9;
+    }
 
-.read a:hover{
-    color: rgb(0, 27, 200);
-}
+    .post:hover{
+        transform: translate(-4px, -4px);
+        box-shadow: 8px 8px 8px 0 rgba(0, 0, 0, 0.4);
+    }
 
-.searchbar button:hover{
-    background-color: slategray;
-}
+    .read a:hover{
+        color: rgb(0, 27, 200);
+    }
 
-#submit:hover{
-    background-color: #d9d9d9;
+    .searchbar button:hover{
+        background-color: slategray;
+    }
+
+    #submit:hover{
+        background-color: #d9d9d9;
+    }
 }
 
 /* RWD */
@@ -445,11 +447,6 @@ main{
 
     .read a{
         font-size: 22px;
-    }
-
-    .post:hover{
-    transform: none;
-    box-shadow: none;
     }
 }
 
