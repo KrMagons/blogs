@@ -423,12 +423,16 @@ main{
 
 /* RWD */
 @media (max-width: 600px) {
-    .nav li{
+    .nav-header{
         display: none;
     }
 
     .nav{
         justify-content: center;
+    }
+
+    .nav-list a{
+        font-size: 20px;
     }
 
     .about > p{
