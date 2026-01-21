@@ -92,16 +92,22 @@ function createPost(post){
     new_post.className = "post";
 
     //Bildes elements
+    let img_link = document.createElement("a");
+    img_link.href = post["pdf"];
     let post_img = document.createElement("img");
     post_img.src = post["img"];
     post_img.alt = "Bilde " + post["Title"];
-    new_post.append(post_img);
+    img_link.append(post_img);
+    new_post.append(img_link);
 
     //Publikācijas apraksts
     let post_description = document.createElement("div");
     post_description.className = "post-description";
     let description_h3 = document.createElement("h3");
-    description_h3.textContent = post["Title"];
+    let title_link = document.createElement("a");
+    title_link.textContent = post["Title"];
+    title_link.href = post["pdf"];
+    description_h3.append(title_link);
     post_description.append(description_h3);
     let description_p = document.createElement("p")
     description_p.textContent = post["Description"];
@@ -133,15 +139,6 @@ function createPost(post){
     post_info.append(second_row);
 
     new_post.append(post_info);
-
-    //Saite uz publikāciju
-    let read_button = document.createElement("p");
-    read_button.className = "read";
-    let read_link = document.createElement("a");
-    read_link.href = post["pdf"];
-    read_link.textContent = "Lasīt..";
-    read_button.append(read_link);
-    new_post.append(read_button); 
 
     return new_post;
 }
