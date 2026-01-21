@@ -60,7 +60,7 @@ const posts =
     "Published": "2022-10-07",
     "Type": "Pārgājiens",
     "pdf": "darbi/Pargajiens Riga-Zvejniekciems.pdf",
-    "img": "images/pargajiens riga-saulkrasti.jpeg"
+    "img": "images/pargajiens riga-saulkrasti.jpg"
 },
 
 {
