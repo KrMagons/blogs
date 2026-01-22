@@ -427,6 +427,10 @@ main{
     text-align:justify;
     }
 
+    .posts{
+        width: 90%;
+    }
+
     .post{
         height: 450px;
     }
