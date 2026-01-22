@@ -59,7 +59,8 @@ if(is_mobile){
     entries.forEach(entry=>{
         if(entry.isIntersecting){
             entry.target.classList.add("is-active");
-            observer.unobserve(entry.target);
+        }else{
+            entry.target.classList.remove("is-active");
         }
     })
 },
@@ -182,7 +183,7 @@ function addAllPosts(){
         let new_post = createPost(post);
         $(new_post).css("display", "none");
         $(new_post).appendTo($posts_element);
-        $(new_post).fadeIn(200);
+        $(new_post).fadeIn(600);
 
         if(observer) observer.observe(new_post);
     }
@@ -280,10 +281,10 @@ function isMessageValid(event){
 // Funkcija attēlo vai paslēpj publikāciju veidu izvēlni .dropdown-list. Tiek izmantots jQuery priekš pārejas efektiem
 function displayDropdown(){
     if($(post_types).css("display") === "none"){
-        $(post_types).fadeIn(200);
+        $(post_types).fadeIn(400);
         $(dropdown_button).css("background-color", "slategray");
     }else{
-        $(post_types).fadeOut(200);
+        $(post_types).fadeOut(400);
         $(dropdown_button).css("background-color", "#97aabd");
     }
 }

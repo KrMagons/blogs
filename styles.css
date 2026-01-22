@@ -409,7 +409,7 @@ main{
 @media (hover: none) and (pointer: coarse){
     .post{
         opacity: 0;
-        transform: translateX(-30px);
+        transform: translateX(-20px);
         transition: 0.6s ease;
     }
 
