@@ -163,7 +163,7 @@ function addAllPosts(){
         let new_post = createPost(post);
         $(new_post).css("display", "none");
         $(new_post).appendTo($posts_element);
-        $(new_post).fadeIn(300);
+        $(new_post).fadeIn(200);
     }
 }
 
@@ -259,10 +259,10 @@ function isMessageValid(event){
 // Funkcija attēlo vai paslēpj publikāciju veidu izvēlni .dropdown-list. Tiek izmantots jQuery priekš pārejas efektiem
 function displayDropdown(){
     if($(post_types).css("display") === "none"){
-        $(post_types).fadeIn(300);
+        $(post_types).fadeIn(200);
         $(dropdown_button).css("background-color", "slategray");
     }else{
-        $(post_types).fadeOut(300);
+        $(post_types).fadeOut(200);
         $(dropdown_button).css("background-color", "#97aabd");
     }
 }
