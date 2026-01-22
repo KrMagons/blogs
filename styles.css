@@ -407,7 +407,7 @@ main{
 
 /* Intersection observer on Mobile */
 @media (hover: none) and (pointer: coarse){
-    .post{
+    .post.pre-active{
         opacity: 0;
         transform: translateX(-20px);
         transition: 0.6s ease;

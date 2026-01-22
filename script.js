@@ -181,11 +181,14 @@ function sortPostArray(){
 function addAllPosts(){
     for(let post of running_posts_arr){
         let new_post = createPost(post);
-        $(new_post).css("display", "none");
         $(new_post).appendTo($posts_element);
-        $(new_post).fadeIn(600);
-
-        if(observer) observer.observe(new_post);
+        if(is_mobile){
+            new_post.classList.add("pre-active");
+            observer.observe(new_post);
+        }else{
+            $(new_post).css("display", "none");
+            $(new_post).fadeIn(600);
+        }
     }
 }
 
