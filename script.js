@@ -7,11 +7,15 @@ let date_asc;
 let date_desc;
 let searchbar;
 let searchbar_button;
+let posts_element;
 let $posts_element;
 let name_input;
 let email_input;
 let message_input;
 let message_form;
+const is_mobile = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+let observer;
+
 
 document.addEventListener("DOMContentLoaded", () => {
     dropdown_button = document.getElementById("dropdown-btn");
@@ -22,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     date_desc = document.getElementById("date-desc");
     searchbar = document.getElementById("searchbar");
     searchbar_button = document.getElementById("searchbar-button");
+    posts_element = document.getElementById("posts");
     $posts_element = $(".posts");
     name_input = document.getElementById("name");
     email_input = document.getElementById("email");
@@ -46,8 +51,22 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("load", () => {
         window.scrollTo(0, 0);
     });
-
 });
+
+/* Intersection Observer for Mobile */
+if(is_mobile){
+    observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("is-active");
+            observer.unobserve(entry.target);
+        }
+    })
+},
+{
+    threshold: 0.2
+})
+}
 
 //Funkcija atgriež masīvu ar visām vērtībām no posts.js pēc padotās property īpašības
 function getValues(property){
@@ -164,6 +183,8 @@ function addAllPosts(){
         $(new_post).css("display", "none");
         $(new_post).appendTo($posts_element);
         $(new_post).fadeIn(200);
+
+        if(observer) observer.observe(new_post);
     }
 }
 
