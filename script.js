@@ -107,6 +107,12 @@ function createPost(post){
     let new_post = document.createElement("div");
     new_post.className = "post";
 
+    //Lai mobilajās ierīcēs var spiest jebkur, lai atvērtu publikāciju
+    let post_link = document.createElement("a");
+    post_link.href = post["pdf"];
+    post_link.className = "post-link";
+    new_post.append(post_link);
+
     //Bildes elements
     let img_link = document.createElement("a");
     img_link.href = post["pdf"];

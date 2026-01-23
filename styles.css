@@ -216,6 +216,13 @@ main{
 }
 
 /* Posts */
+.post-link{
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
 .posts{
     margin: 20px 0 40px 0;
     display: flex;
@@ -405,9 +412,14 @@ main{
     }
 }
 
-/* Intersection observer on Mobile */
+/* Mobile devices only */
 @media (hover: none) and (pointer: coarse){
+    .post-link{
+        pointer-events: auto;
+    }
+
     .post{
+        position: relative;
         transition: 0.4s ease;  
     }
 
