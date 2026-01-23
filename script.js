@@ -55,14 +55,14 @@ const observer = new IntersectionObserver(entries => {
     if(!window.matchMedia("(hover: none)").matches) return;
 
     entries.forEach(entry => {
-        if(entry.intersectionRatio > 0.8){
+        if(entry.intersectionRatio > 0.6){
             entry.target.classList.add("is-active");
-        }else if(entry.intersectionRatio < 0.2){
+        }else if(entry.intersectionRatio < 0.3){
             entry.target.classList.remove("is-active");
         }
     });
 }, {
-    threshold: [0.2, 0.8]
+    threshold: [0.3, 0.6]
 });
 
 //Funkcija atgriež masīvu ar visām vērtībām no posts.js pēc padotās property īpašības
