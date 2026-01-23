@@ -308,12 +308,15 @@ main{
 
 .email{
     font-style: italic;
+    transition: 0.1s;
 }
 
 .contacts li a{
     font-style: italic;
     text-decoration: none;
     font-family: 'Times New Roman', Times, serif;
+    color: black;
+    transition: 0.1s;
 }
 
 .contacts li{
@@ -412,6 +415,14 @@ main{
     .post img:hover{
         opacity: 80%;
     }
+
+    .email:hover{
+        color: white;
+    }
+
+    .contacts li a:hover{
+        color: white;
+    }
 }
 
 /* Mobile devices only */
@@ -428,6 +439,14 @@ main{
     .post.is-active{
         transform: scale(1.03);
         box-shadow: 0px 0px 20px 0 rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-list li a:active{
+        color: white;
+    }
+
+    .contacts li a:active{
+        color: white;
     }
 }
 
