@@ -12,6 +12,7 @@ html{
 }
 
 .page{
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
@@ -20,6 +21,7 @@ main{
     padding-top: 50px;
     display: flex;
     flex-direction: column;
+    flex: 1;
     align-items: center;
     background-color: white;
     font-family:'Times New Roman', Times, serif;
