@@ -407,15 +407,13 @@ main{
 
 /* Intersection observer on Mobile */
 @media (hover: none) and (pointer: coarse){
-    .post.pre-active{
-        opacity: 0;
-        transform: translateX(-20px);
-        transition: 0.6s ease;
+    .post{
+        transition: 0.2s ease;  
     }
 
     .post.is-active{
-        opacity: 1;
-        transform: translateX(0);
+        transform: scale(1.03);
+        box-shadow: 0px 0px 30px 0 rgba(0, 0, 0, 0.5);
     }
 }
 

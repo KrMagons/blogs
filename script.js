@@ -13,9 +13,6 @@ let name_input;
 let email_input;
 let message_input;
 let message_form;
-const is_mobile = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
-let observer;
-
 
 document.addEventListener("DOMContentLoaded", () => {
     dropdown_button = document.getElementById("dropdown-btn");
@@ -54,20 +51,16 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* Intersection Observer for Mobile */
-if(is_mobile){
-    observer = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-        if(entry.isIntersecting){
-            entry.target.classList.add("is-active");
-        }else{
-            entry.target.classList.remove("is-active");
-        }
-    })
-},
-{
-    threshold: 0.2
-})
-}
+const observer = new IntersectionObserver(entries => {
+    if(!window.matchMedia("(hover: none)").matches) return;
+
+    entries.forEach(entry => {
+        if(entry.isIntersecting) entry.target.classList.add("is-active");
+        else entry.target.classList.remove("is-active");
+    });
+}, {
+    threshold: 1
+});
 
 //Funkcija atgriež masīvu ar visām vērtībām no posts.js pēc padotās property īpašības
 function getValues(property){
@@ -182,13 +175,10 @@ function addAllPosts(){
     for(let post of running_posts_arr){
         let new_post = createPost(post);
         $(new_post).appendTo($posts_element);
-        if(is_mobile){
-            new_post.classList.add("pre-active");
-            observer.observe(new_post);
-        }else{
-            $(new_post).css("display", "none");
-            $(new_post).fadeIn(600);
-        }
+        $(new_post).css("display", "none");
+        $(new_post).fadeIn(600);
+
+        observer.observe(new_post);
     }
 }
 
@@ -284,10 +274,10 @@ function isMessageValid(event){
 // Funkcija attēlo vai paslēpj publikāciju veidu izvēlni .dropdown-list. Tiek izmantots jQuery priekš pārejas efektiem
 function displayDropdown(){
     if($(post_types).css("display") === "none"){
-        $(post_types).fadeIn(400);
+        $(post_types).fadeIn(300);
         $(dropdown_button).css("background-color", "slategray");
     }else{
-        $(post_types).fadeOut(400);
+        $(post_types).fadeOut(300);
         $(dropdown_button).css("background-color", "#97aabd");
     }
 }
