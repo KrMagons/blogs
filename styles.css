@@ -408,12 +408,12 @@ main{
 /* Intersection observer on Mobile */
 @media (hover: none) and (pointer: coarse){
     .post{
-        transition: 0.2s ease;  
+        transition: 0.4s ease;  
     }
 
     .post.is-active{
-        transform: scale(1.03);
-        box-shadow: 0px 0px 30px 0 rgba(0, 0, 0, 0.5);
+        transform: scale(1.05);
+        box-shadow: 0px 0px 20px 0 rgba(0, 0, 0, 0.5);
     }
 }
 
